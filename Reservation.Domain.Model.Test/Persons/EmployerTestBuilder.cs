@@ -5,16 +5,14 @@ namespace Reservation.Domain.Model.Test.Persons
 {
     public class EmployerTestBuilder
     {
-        private const string SomeFirstName = "someFirstName";
-        private const string SomeLastName = "someLastName";
-        private const string SomePhoneNumber = "09302520691";
-        private const string SomeEmail = "lvlilad.l2ivandi@gmail.com";
+       
 
         private readonly Employer employer;
 
         public EmployerTestBuilder()
         {
-            employer = new Employer(SomeFirstName, SomeLastName, SomePhoneNumber, SomeEmail);
+            employer = new Employer(PersonConstant.SomeFirstName, PersonConstant.SomeLastName,
+                PersonConstant.SomePhoneNumber, PersonConstant.SomeEmail);
         }
 
         public Employer Build()
@@ -50,9 +48,5 @@ namespace Reservation.Domain.Model.Test.Persons
             return this;
         }
 
-        internal object WithDegree(Degree someDegree)
-        {
-            
-        }
     }
 }

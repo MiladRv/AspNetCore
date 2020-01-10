@@ -29,7 +29,7 @@ namespace Reservation.Domain.Model.Persons
                 throw new DomainException(PersonValidationMessages.NullOrWhiteSpaceEmail);
             }
 
-            if (IsValidEmail(email))
+            if (!IsValidEmail(email))
             {
                 throw new DomainException(PersonValidationMessages.InvalidEmail);
             }
@@ -47,6 +47,7 @@ namespace Reservation.Domain.Model.Persons
 
         private bool IsValidEmail(string email)
         {
+            //can use regex !!!
             try
             {
                 var m = new MailAddress(email);

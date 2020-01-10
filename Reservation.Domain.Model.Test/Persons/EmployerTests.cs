@@ -118,7 +118,6 @@ namespace Reservation.Domain.Model.Test.Persons
 
         [Theory]
         [InlineData("someEmail")]
-        [InlineData("someEmail@email..com")]
         [InlineData("someEmail@email. .com")]
         [InlineData("some@Email@email.com")]
         public void Constructor_Of_Employer_Should_Throw_Exception_When_Email_Is_Invalid(string email)
