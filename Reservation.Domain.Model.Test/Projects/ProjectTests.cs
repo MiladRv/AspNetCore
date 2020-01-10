@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System;
+using System.Collections.Generic;
+using FluentAssertions;
 using Reservation.Domain.Model.Projects;
 using Xunit;
 
@@ -59,6 +61,41 @@ namespace Reservation.Domain.Model.Test.Projects
             project.Status
                 .Should()
                 .BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void Constructor_Of_Project_Should_Initialize_Members_Property()
+        {
+            //arrange
+            var expected = new HashSet<Guid>();
+
+            //act
+            var actual = new ProjectTestBuilder()
+                .Build();
+
+            //assert
+            actual.Members
+                .Should()
+                .BeEquivalentTo(expected);
+
+        }
+
+        [Fact]
+        public void AddMember_Of_Project_Should_Add_Member()
+        {
+            //arrange 
+            var someEmployeeId = Guid.NewGuid();
+
+            var project = new ProjectTestBuilder()
+                .Build();
+
+            //act
+            project.AddMember(someEmployeeId);
+
+            //assert
+            project.Members
+                .Should()
+                .ContainEquivalentOf(someEmployeeId);
         }
     }
 }

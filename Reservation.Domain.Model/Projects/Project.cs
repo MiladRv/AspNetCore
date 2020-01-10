@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Reservation.Domain.Model.Projects
 {
@@ -12,11 +13,20 @@ namespace Reservation.Domain.Model.Projects
             }
 
             Id = Guid.NewGuid();
+            Name = name;
             Status = status;
+
+            Members = new HashSet<Guid>();
         }
 
         public Guid Id { get; }
         public string Name { get; set; }
         public Status Status { get; set; }
+        public ISet<Guid> Members { get; set; }
+
+        public void AddMember(Guid employeeId)
+        {
+            Members.Add(employeeId);
+        }
     }
 }
