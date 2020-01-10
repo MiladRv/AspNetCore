@@ -3,3 +3,11 @@
 ################################################################################
 
 /Reservation/obj
+/Reservation.Domain.Model/bin/Debug/netcoreapp3.1
+/Reservation.Domain.Model/obj
+/Reservation.Domain.Model.Test/bin/Debug/netcoreapp3.1
+/Reservation.Domain.Model.Test/obj
+/Reservation.DomainTests/bin/Debug/netstandard2.0
+/Reservation.DomainTests/obj
+/.vs
+/Reservation/.vs/Reservation
