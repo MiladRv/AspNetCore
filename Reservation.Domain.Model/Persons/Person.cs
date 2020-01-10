@@ -5,7 +5,6 @@ namespace Reservation.Domain.Model.Persons
 {
     public class Person : IdentityUser<Guid>
     {
-        private object firstName1;
 
         public Person(string firstName)
         {
@@ -14,6 +13,7 @@ namespace Reservation.Domain.Model.Persons
                 throw new DomainException(PersonValidationMessages.NullOrWhiteSpaceFirstName);
             }
 
+            Id = Guid.NewGuid();
 
             FirstName = firstName;
         }
