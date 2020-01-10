@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Reservation.Domain.Model\Reservation.Domain.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Jobs\" />
-  </ItemGroup>
-
 </Project>
