@@ -28,5 +28,10 @@ namespace Reservation.Domain.Model.Projects
         {
             Members.Add(employeeId);
         }
+
+        public void RemoveMember(Guid employeeId)
+        {
+            Members.Remove(employeeId);
+        }
     }
 }

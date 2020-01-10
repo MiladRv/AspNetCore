@@ -97,5 +97,25 @@ namespace Reservation.Domain.Model.Test.Projects
                 .Should()
                 .ContainEquivalentOf(someEmployeeId);
         }
+
+        [Fact]
+        public void RemoveMember_Of_Project_Should_Remove_Member()
+        {
+            //arrange 
+            var someEmployeeId = Guid.NewGuid();
+
+            var project = new ProjectTestBuilder()
+                .Build();
+
+            project.AddMember(someEmployeeId);
+
+            //act
+            project.RemoveMember(someEmployeeId);
+
+            //assert
+            project.Members
+                .Should()
+                .NotContain(someEmployeeId);
+        }
     }
 }
