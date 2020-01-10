@@ -2,10 +2,11 @@
 {
     public class Employer : Person
     {
-        public Employer(string firstName)
-        : base(firstName)
+        public Employer(string firstName, string lastName)
+        : base(firstName, lastName)
         {
 
         }
+
     }
 }

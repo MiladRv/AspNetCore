@@ -47,7 +47,28 @@ namespace Reservation.Domain.Model.Test.Persons
 
         }
 
+        [Fact]
+        public void Constructor_Of_Employer_Should_Throw_Exception_When_LastName_Is_Null_Or_WhiteSpace()
+        {
+            //arrange
+            var invalidLastName = string.Empty;
 
+            //act
+            void action()
+            {
+                var employer = new EmployerTestBuilder()
+                    .WithLastName(invalidLastName)
+                    .Build();
+            }
+
+            //assert
+            var exception = Assert.Throws<DomainException>(action);
+
+            exception.Message
+                .Should()
+                .BeEquivalentTo(PersonValidationMessages.NullOrWhiteSpaceLastName.Message);
+
+        }
 
 
     }
